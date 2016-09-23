@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript - 13-14</title>
+	<script src="js/jquery-3.1.0.min.js"></script>
+	<script src="js/tmpl.js"></script>
+	<script src="js/script.js" defer></script>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="wraper">
+
+		<div class="search">
+			<input type="text" class="search__input">
+			<input type="button" value=" " class="search__button">
+		</div>
+
+		<div class="result"></div>
+
+		<script type="text/html" id="result_template">
+			<h3 class="result__header">Результаты поиска</h3>
+			<ul class="result__list">
+				<% for ( var i = 0; i < results.length; i++ ) { %>
+				<li class="result__item">
+					<a href="<%=results[i].itemurl%>">
+						<img src="<%=results[i].url%>" alt="">
+						<h4 class="result__item-header"><%=results[i].title%></h4>
+					</a>
+				</li>
+				<% } %>
+			</ul>
+
+		</script>
+	</div>
+</body>
+</html>
